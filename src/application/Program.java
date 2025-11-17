@@ -33,10 +33,20 @@ public class Program {
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
-		System.out.println("\n === teste3 :seller Insert() === \n");
+		System.out.println("\n === teste4 :seller Insert() === \n");
 		Seller newSeller = new Seller(null, "Eric ", "eric@gmail.com ", new Date(), 2500.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted ! new id = " + newSeller.getId());
+		
+		System.out.println("\n === teste5 :seller Update() === \n");
+		seller = sellerDao.FindByld(1);
+		seller.setName("Eric Bastos");
+		sellerDao.update(seller);
+		System.out.println("Update complete !");
+		
 	}
 
 }
+
+
+
