@@ -40,10 +40,33 @@ public class DepartmentDaoJDBC implements DepartmentDao{
 
 	@Override
 	public Department FindByld(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		try {
+			
+			st = conn.prepareStatement("SELECT * FROM department WHERE Id = ?");
+			st.setInt(1,id);
+			
+			rs = st.executeQuery();
+			
+			if(rs.next()) {
+				Department department = new Department();
+				
+				department.setId(rs.getInt("Id"));
+				department.setName(rs.getString("Name"));
+				return department;
+				
+			}
+			return null;
+			
+		}
+		catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+	
 	}
-
+	
 	@Override
 	public List<Department> findAll() {
 	
@@ -76,18 +99,18 @@ public class DepartmentDaoJDBC implements DepartmentDao{
 			DB.closeStatment(st);
 			DB.closeResultSet(rs);
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		return null;
 	}
-
 }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
