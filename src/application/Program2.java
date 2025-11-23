@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
+import model.dao.Impl.DepartmentDaoJDBC;
 import model.entities.Department;
 
 public class Program2 {
@@ -23,6 +24,12 @@ public class Program2 {
 		for(Department obj :list) {
 			System.out.println(obj);
 		}
+		System.out.println("\n === TESTE 3 :department Insert() === \n");
+		Department department2 = new Department(null,"Eric");
+		departmentDao.insert(department2);
+		System.out.println("Inserted ! new id : " + department2.getId() );
+
+		
 
 		
 
