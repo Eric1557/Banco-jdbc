@@ -1,6 +1,9 @@
 package model.dao.Impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import model.dao.DepartmentDao;
@@ -40,7 +43,27 @@ public class DepartmentDaoJDBC implements DepartmentDao{
 
 	@Override
 	public List<Department> findAll() {
-		// TODO Auto-generated method stub
+	
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		try {
+			st = conn.prepareStatement("SELECT * FROM department ORDER BY Name");
+		}
+		catch(SQLException e) {
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		return null;
 	}
 
