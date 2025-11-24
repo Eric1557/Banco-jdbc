@@ -33,6 +33,16 @@ public class Program2 {
 		dep.setName("pc");
         departmentDao.update(dep);
         System.out.println("Update Completed!");
+        
+		System.out.println("\n === TESTE 4 :department deletedByld() === \n");
+		System.out.println("Enter id for delete test: ");
+		int id = sc.nextInt();
+		departmentDao.deleteByld(id);
+		System.out.println("Deleted Completed!");
+		
+		
+        
+        
 		sc.close();
 
 	}
